@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
+    "dev": "ts-node-dev ./src/index.ts",
     "start": "node dist/index.js",
-    "dev": "ts-node-dev ./src/index.ts"
+    "postinstall": "prisma generate"
   },
   "repository": {
     "type": "git",
