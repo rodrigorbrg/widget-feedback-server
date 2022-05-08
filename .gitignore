@@ -2,6 +2,7 @@ node_modules
 # Keep environment variables out of version control
 .env
 .gitignore
+dist/*
 prisma/migrations/migration_lock.toml
 prisma/dev.db-journal
 prisma/dev.db
