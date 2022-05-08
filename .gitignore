@@ -1,9 +1,7 @@
 node_modules
 # Keep environment variables out of version control
 .env
-prisma/dev.db
-prisma/migrations/migration_lock.toml
 .gitignore
+prisma/migrations/migration_lock.toml
 prisma/dev.db-journal
-prisma/migrations/20220508023154_init/migration.sql
-prisma/migrations/20220508033216_init/migration.sql
+prisma/dev.db
