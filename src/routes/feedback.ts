@@ -9,9 +9,10 @@ import { Mailtrap } from '../service';
 router.post('/', async function(req, res, next) {
   try {
     await FeedBackController(new Prisma(), new Mailtrap()).createNewFeedback(req.body);
-    res.status(201).json();
+    res.status(201).send();
   } catch (e) {
     console.log(e);
+    res.status(500).send();
   }
 });
 
