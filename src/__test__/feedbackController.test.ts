@@ -1,6 +1,8 @@
 import { FeedBackController } from "../controller";
 import { FeedbackModel } from "../repository";
 
+const createFeedback = jest.fn();
+const sendEmail = jest.fn();
 
 describe('Submit new feedback', () => {
 
@@ -20,33 +22,18 @@ describe('Submit new feedback', () => {
     await expect(controller.createNewFeedback(req as FeedbackModel)).resolves.not.toThrow();
   })
 
-  it('Should call createFeedback', async () => {
+  it('Should call createFeedback and sendEmail', async () => {
     const req = {
       type: 'BUG',
       comment: 'Cor muito escura do app',
     }
 
-    const controller = FeedBackController({
-      createFeedback: async () => {}
-    }, {
-      sendEmail: async () => {}
-    });
+    const controller = FeedBackController({ createFeedback }, { sendEmail });
 
-    await expect(controller.createNewFeedback(req as FeedbackModel)).resolves.not.toThrow();
+    await controller.createNewFeedback(req as FeedbackModel);
+
+    expect(createFeedback).toHaveBeenCalled();
+    expect(sendEmail).toHaveBeenCalled();
   })
-
-  it('Should call sendEmail', async () => {
-    const req = {
-      type: 'BUG',
-      comment: 'Cor muito escura do app',
-    }
-
-    const controller = FeedBackController({
-      createFeedback: async () => {}
-    }, {
-      sendEmail: async () => {}
-    });
-
-    await expect(controller.createNewFeedback(req as FeedbackModel)).resolves.not.toThrow();
-  })
+  
 })
