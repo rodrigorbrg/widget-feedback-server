@@ -10,6 +10,6 @@ app.use(cors());
 app.use('/feedback', feedbackRouter);
 
 app.listen(process.env.PORT || 3333, () => {
-  console.log(`Server running on port ${process.env.PORT}`)
+  console.log(`Server running on port ${process.env.PORT || 3333}`)
 })
 
