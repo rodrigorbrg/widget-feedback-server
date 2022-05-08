@@ -11,10 +11,10 @@ datasource db {
 }
 
 model Feedback {
-  id         String @id @unique @default(uuid())
+  id         String  @id @unique @default(uuid())
   type       String
   comment    String
-  screenshot String
+  screenshot String?
 
   @@map("feedbacks")
 }

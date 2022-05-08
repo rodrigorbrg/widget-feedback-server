@@ -11,7 +11,7 @@ const FeedBackController = (repository: Database, email: Email) => {
   }
 
   return {
-    createNewFeedback
+    createNewFeedback,
   }
 }
 
