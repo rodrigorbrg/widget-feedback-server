@@ -2,7 +2,7 @@
 export interface EmailModel {
   type: string;
   comment: string;
-  screenshot: string;
+  screenshot?: string;
 }
 
 export default interface Email {
