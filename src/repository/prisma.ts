@@ -12,7 +12,7 @@ class Prisma implements Database {
       data: { 
         type: feedback.type,
         comment: feedback.comment,
-        screeshot: feedback.screenshot,
+        screenshot: feedback.screenshot,
       }
     });
   };
