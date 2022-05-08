@@ -5,3 +5,4 @@ node_modules
 prisma/migrations/migration_lock.toml
 prisma/dev.db-journal
 prisma/dev.db
+coverage/*
