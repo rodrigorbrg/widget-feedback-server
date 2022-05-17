@@ -32,7 +32,7 @@ npm i jest @swc/jest -D
 # Typescript
 
 ```
-npx tsx --init
+npx tsc --init
 ```
 
 ADD
